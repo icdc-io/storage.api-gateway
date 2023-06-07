@@ -1,0 +1,121 @@
+{
+    "backend": "http://storage:8080",
+    "endpoints": [
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/pools"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/accounts"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/accounts/{account}/iscsi/quotas"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/accounts/{account}/s3/quotas"
+    },
+    {
+      "methods": [ "PUT" ],
+      "endpoint": "v2/accounts/{account}/s3/quotas/{quota_id}"
+    },
+    {
+      "methods": [ "PUT" ],
+      "endpoint": "v2/accounts/{account}/iscsi/quotas/{quota_id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/accounts/{account}/s3/users"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/accounts/{account}/iscsi/configs"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/accounts/{account}/iscsi/clients"
+    },
+    {
+      "methods": [ "GET", "PUT", "DELETE" ],
+      "endpoint": "v2/s3/users/{id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/s3/users/{id}/buckets"
+    },
+    {
+      "methods": [ "GET", "PUT", "DELETE" ],
+      "endpoint": "v2/s3/buckets"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/s3/users/{id}/keys"
+    },
+    {
+      "methods": [ "PUT" ],
+      "endpoint": "v2/s3/users/{id}/lock"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/gateways/{gateway_id}/iscsi/configs"
+    },
+    {
+      "methods": [ "GET", "DELETE" ],
+      "endpoint": "v2/iscsi/configs/{config_id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/configs/{config_id}/disks"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/configs/{config_id}/disks/{id}"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/clients/{client_id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/clients/{client_id}/disks"
+    },
+    {
+      "methods": [ "DELETE" ],
+      "endpoint": "v2/iscsi/clients/{client_id}/disks/{id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/configs/{config_id}/gateways"
+    },
+    {
+      "methods": [ "GET"],
+      "endpoint": "v2/gateways/{gateway_id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots"
+    },
+    {
+      "methods": [ "GET", "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}/new_disk"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}/rollback"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts/iscsi/snapshots"
+    },
+    {
+      "methods":["GET"],
+      "endpoint" : "v2/"
+    }
+    ]
+}

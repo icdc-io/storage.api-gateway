@@ -1,0 +1,77 @@
+{
+  "backend": "http://storage:8888",
+  "endpoints": [
+  {
+    "methods": [ "GET" ],
+    "endpoint": "s3/{account}"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "s3/{account}/account_quota_info"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "s3/{account}/member_info"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "s3/{account}/s3users"
+  },
+  {
+    "methods": [ "GET", "PUT", "DELETE" ],
+    "endpoint": "s3/{account}/s3users/{s3_user}"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "s3/{account}/s3users/{s3_user}/buckets"
+  },
+  {
+    "methods": [ "GET", "PUT", "DELETE" ],
+    "endpoint": "s3/{account}/s3users/{s3_user}/buckets/{bucket_name}"
+  },
+  {
+    "methods": [ "PUT" ],
+    "endpoint": "s3/{account}/s3users/{s3_user}/keys"
+  },
+  {
+    "methods": [ "PUT" ],
+    "endpoint": "s3/{account}/s3users/{s3_user}/lock"
+  },
+  {
+    "methods": [ "PUT" ],
+    "endpoint": "s3/{account}/s3users/{s3_user}/unlock"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "iscsi/{account}/account_info"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "iscsi/{account}/clients"
+  },
+  {
+    "methods": [ "GET", "PUT", "DELETE" ],
+    "endpoint": "iscsi/{account}/clients/{client}"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "iscsi/{account}/disks"
+  },
+  {
+    "methods": [ "GET", "PUT", "DELETE" ],
+    "endpoint": "iscsi/{account}/disks/{disk}"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "iscsi/{account}/disks/{disk}/snapshots"
+  },
+  {
+    "methods": [ "GET", "PUT", "DELETE" ],
+    "endpoint": "iscsi/{account}/disks/{disk}/snapshots/{snapshot}"
+  },
+  {
+    "methods": [ "PUT" ],
+    "endpoint": "iscsi/{account}/disks/{disk}/snapshots/{snapshot}/create_disk"
+  }
+  ]
+}

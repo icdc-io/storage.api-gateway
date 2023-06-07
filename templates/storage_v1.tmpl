@@ -1,0 +1,26 @@
+{{ range $idx, $ep := .storage_v1.endpoints }}{{ if $idx }},{{ end }}
+{{   range $idx2, $method := $ep.methods }}{{ if $idx2 }},{{ end }}
+      {
+         "endpoint":"/api/storage/v1/{{ $ep.endpoint }}",
+         "output_encoding":"no-op",
+         "method":"{{ $method }}",
+         "headers_to_pass":[
+            "*"
+         ],
+         "querystring_params":[
+             "*"
+         ],
+         "backend":[
+            {
+               "url_pattern":"/api/storage/v1/{{ $ep.endpoint }}",
+               "encoding":"no-op",
+               "host":[
+	          {{ env "BACKEND_STORAGE" | default (expandenv $.storage_v1.backend) | quote }}
+               ],
+               "extra_config":{ {{ include "storage_extra.json" }}
+	       }
+            }
+         ]
+      }
+{{   end }}
+{{ end }}

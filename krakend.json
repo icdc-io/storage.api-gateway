@@ -1,0 +1,36 @@
+{
+   "version": 2,
+   "port": 8080,
+   "extra_config":{
+      "github_com/devopsfaith/krakend-gologging":{
+         "level": "DEBUG",
+         "prefix": "[KRAKEND]",
+         "syslog": false,
+         "stdout": true,
+         "format": "default"
+      },
+      "github_com/devopsfaith/krakend-cors":{
+         "allow_origins":[
+            "http*"
+         ],
+         "allow_headers":[
+            "*"
+         ],
+         "allow_methods":[
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE",
+            "OPTIONS"
+         ]
+      }
+   },
+   "timeout": "5m",
+   "cache_ttl": "300s",
+   "name": "API Gateway",
+   "endpoints": [
+     {{ template "storage_v1.tmpl" . }},
+     {{ template "storage.tmpl" . }}
+   ]
+}
