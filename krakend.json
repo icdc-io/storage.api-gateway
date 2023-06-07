@@ -30,7 +30,7 @@
    "cache_ttl": "300s",
    "name": "API Gateway",
    "endpoints": [
-     {{ template "storage-v1.tmpl" . }},
+     {{ template "storage_v1.tmpl" . }},
      {{ template "storage.tmpl" . }}
    ]
 }

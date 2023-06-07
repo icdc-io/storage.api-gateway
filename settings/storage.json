@@ -1,5 +1,5 @@
 {
-    "backend": "http://localhost:8082",
+    "backend": "http://storage:8080",
     "endpoints": [
     {
       "methods": [ "GET" ],
