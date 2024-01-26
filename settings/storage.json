@@ -38,6 +38,10 @@
       "endpoint": "v2/accounts/{account}/iscsi/clients"
     },
     {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts/{account}/usage"
+    },
+    {
       "methods": [ "GET", "PUT", "DELETE" ],
       "endpoint": "v2/s3/users/{id}"
     },
