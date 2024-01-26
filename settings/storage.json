@@ -43,7 +43,7 @@
     },
     {
       "methods": [ "GET" ],
-      "endpoint": "v2/accounts/"
+      "endpoint": "v2/accounts"
     },
     {
       "methods": [ "GET", "PUT", "DELETE" ],
