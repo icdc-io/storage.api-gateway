@@ -42,6 +42,10 @@
       "endpoint": "v2/accounts/{account}/usage"
     },
     {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts/{account}/all"
+    },
+    {
       "methods": [ "GET", "PUT", "DELETE" ],
       "endpoint": "v2/s3/users/{id}"
     },
