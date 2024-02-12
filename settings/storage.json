@@ -9,6 +9,10 @@
       "methods": [ "POST" ],
       "endpoint": "v2/accounts"
     },
+        {
+      "methods": [ "DELETE" ],
+      "endpoint": "v2/accounts"
+    },
     {
       "methods": [ "GET", "POST" ],
       "endpoint": "v2/accounts/{account}/iscsi/quotas"
