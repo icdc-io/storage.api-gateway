@@ -11,7 +11,7 @@
     },
         {
       "methods": [ "DELETE" ],
-      "endpoint": "v2/accounts"
+      "endpoint": "v2/accounts/{account}"
     },
     {
       "methods": [ "GET", "POST" ],
