@@ -1,0 +1,27 @@
+{{ range $idx, $ep := .delivery.endpoints }}{{ if $idx }},{{ end }}
+{{   range $idx2, $method := $ep.methods }}{{ if $idx2 }},{{ end }}
+      {
+         "endpoint":"/api/delivery/{{ $ep.endpoint }}",
+         "output_encoding":"no-op",
+         "method":"{{ $method }}",
+         "headers_to_pass":[
+            "*"
+         ],
+         "querystring_params":[
+             "*"
+         ],
+         "backend":[
+            {
+               "url_pattern":"/api/{{ $ep.endpoint }}",
+               "encoding":"no-op",
+               "host":[
+	          {{ env "BACKEND_DELIVERY" | default (expandenv $.delivery.backend) | quote }}
+               ],
+               "extra_config":{ {{ include "delivery_extra.json" }}
+               }
+            }
+         ]
+      }
+{{   end }}
+{{ end }}
+

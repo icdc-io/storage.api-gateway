@@ -1,0 +1,9 @@
+{
+  "backend": "http://setup:8080",
+  "endpoints": [
+  {
+    "methods": [ "POST", "DELETE" ],
+    "endpoint": "v1/accounts/{accountName}"
+  }
+  ]
+}

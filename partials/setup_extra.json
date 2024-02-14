@@ -1,0 +1,16 @@
+
+               "github.com/devopsfaith/krakend/http": {
+                  "return_error_details":"backend_api_service"
+               },
+               "github.com/devopsfaith/krakend-martian": {
+                  "header.Blacklist": {
+                     "names": [
+                        "Access-Control-Allow-Origin",
+                        "Access-Control-Allow-Methods"
+                     ],
+                     "scope": [
+                        "request",
+                        "response"
+                     ]
+                  }
+               }

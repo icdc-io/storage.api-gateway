@@ -1,0 +1,33 @@
+{
+  "backend": "http://delivery:3000",
+  "endpoints": [
+  {
+    "methods": [ "GET" ],
+    "endpoint": "v1/service/{service_name}/version"
+  },
+  {
+    "methods": [ "GET", "POST" ],
+    "endpoint": "v1/service/{service_name}/install"
+  },
+  {
+    "methods": [ "DELETE" ],
+    "endpoint": "v1/service/{service_name}"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "v1/service/{service_name}/update"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "v1/service/{service_name}/release"
+  },
+  {
+    "methods": [ "GET", "PUT" ],
+    "endpoint": "v1/service/{service_name}/downgrade"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "v1/services/status"
+  }
+  ]
+}
