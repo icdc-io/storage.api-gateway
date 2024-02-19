@@ -6,10 +6,10 @@
       "endpoint": "v2/pools"
     },
     {
-      "methods": [ "POST" ],
+      "methods": [ "POST","PUT" ],
       "endpoint": "v2/accounts"
     },
-        {
+    {
       "methods": [ "DELETE" ],
       "endpoint": "v2/accounts/{account}"
     },
