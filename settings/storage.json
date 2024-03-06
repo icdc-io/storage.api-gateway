@@ -6,6 +6,14 @@
       "endpoint": "v2/pools"
     },
     {
+      "methods": [ "GET" ],
+      "endpoint": "v2/account/{account}"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts"
+    },
+    {
       "methods": [ "POST" ],
       "endpoint": "v2/accounts"
     },
@@ -48,10 +56,6 @@
     {
       "methods": [ "GET" ],
       "endpoint": "v2/accounts/{account}/usage"
-    },
-    {
-      "methods": [ "GET" ],
-      "endpoint": "v2/accounts"
     },
     {
       "methods": [ "GET", "PUT", "DELETE" ],
