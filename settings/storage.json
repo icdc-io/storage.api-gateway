@@ -7,7 +7,7 @@
     },
     {
       "methods": [ "GET" ],
-      "endpoint": "v2/account/{account}"
+      "endpoint": "v2/accounts/{account}"
     },
     {
       "methods": [ "GET" ],
