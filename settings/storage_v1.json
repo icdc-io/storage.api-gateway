@@ -3,75 +3,75 @@
   "endpoints": [
   {
     "methods": [ "GET" ],
-    "endpoint": "s3/{account}"
+    "endpoint": "v1/s3/{account}"
   },
   {
     "methods": [ "GET" ],
-    "endpoint": "s3/{account}/account_quota_info"
+    "endpoint": "v1/s3/{account}/account_quota_info"
   },
   {
     "methods": [ "GET" ],
-    "endpoint": "s3/{account}/member_info"
+    "endpoint": "v1/s3/{account}/member_info"
   },
   {
     "methods": [ "GET", "PUT" ],
-    "endpoint": "s3/{account}/s3users"
+    "endpoint": "v1/s3/{account}/s3users"
   },
   {
     "methods": [ "GET", "PUT", "DELETE" ],
-    "endpoint": "s3/{account}/s3users/{s3_user}"
+    "endpoint": "v1/s3/{account}/s3users/{s3_user}"
   },
   {
     "methods": [ "GET", "PUT" ],
-    "endpoint": "s3/{account}/s3users/{s3_user}/buckets"
+    "endpoint": "v1/s3/{account}/s3users/{s3_user}/buckets"
   },
   {
     "methods": [ "GET", "PUT", "DELETE" ],
-    "endpoint": "s3/{account}/s3users/{s3_user}/buckets/{bucket_name}"
+    "endpoint": "v1/s3/{account}/s3users/{s3_user}/buckets/{bucket_name}"
   },
   {
     "methods": [ "PUT" ],
-    "endpoint": "s3/{account}/s3users/{s3_user}/keys"
+    "endpoint": "v1/s3/{account}/s3users/{s3_user}/keys"
   },
   {
     "methods": [ "PUT" ],
-    "endpoint": "s3/{account}/s3users/{s3_user}/lock"
+    "endpoint": "v1/s3/{account}/s3users/{s3_user}/lock"
   },
   {
     "methods": [ "PUT" ],
-    "endpoint": "s3/{account}/s3users/{s3_user}/unlock"
+    "endpoint": "v1/s3/{account}/s3users/{s3_user}/unlock"
   },
   {
     "methods": [ "GET" ],
-    "endpoint": "iscsi/{account}/account_info"
+    "endpoint": "v1/iscsi/{account}/account_info"
   },
   {
     "methods": [ "GET", "PUT" ],
-    "endpoint": "iscsi/{account}/clients"
+    "endpoint": "v1/iscsi/{account}/clients"
   },
   {
     "methods": [ "GET", "PUT", "DELETE" ],
-    "endpoint": "iscsi/{account}/clients/{client}"
+    "endpoint": "v1/iscsi/{account}/clients/{client}"
   },
   {
     "methods": [ "GET", "PUT" ],
-    "endpoint": "iscsi/{account}/disks"
+    "endpoint": "v1/iscsi/{account}/disks"
   },
   {
     "methods": [ "GET", "PUT", "DELETE" ],
-    "endpoint": "iscsi/{account}/disks/{disk}"
+    "endpoint": "v1/iscsi/{account}/disks/{disk}"
   },
   {
     "methods": [ "GET", "PUT" ],
-    "endpoint": "iscsi/{account}/disks/{disk}/snapshots"
+    "endpoint": "v1/iscsi/{account}/disks/{disk}/snapshots"
   },
   {
     "methods": [ "GET", "PUT", "DELETE" ],
-    "endpoint": "iscsi/{account}/disks/{disk}/snapshots/{snapshot}"
+    "endpoint": "v1/iscsi/{account}/disks/{disk}/snapshots/{snapshot}"
   },
   {
     "methods": [ "PUT" ],
-    "endpoint": "iscsi/{account}/disks/{disk}/snapshots/{snapshot}/create_disk"
+    "endpoint": "v1/iscsi/{account}/disks/{disk}/snapshots/{snapshot}/create_disk"
   }
   ]
 }
