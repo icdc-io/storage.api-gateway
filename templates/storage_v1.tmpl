@@ -12,7 +12,7 @@
          ],
          "backend":[
             {
-               "url_pattern":"/api/storage/v1/{{ $ep.endpoint }}",
+               "url_pattern":"/api/storage/{{ $ep.endpoint }}",
                "encoding":"no-op",
                "host":[
 	          {{ env "BACKEND_STORAGE" | default (expandenv $.storage_v1.backend) | quote }}
