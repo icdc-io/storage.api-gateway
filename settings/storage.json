@@ -3,6 +3,10 @@
     "endpoints": [
     {
       "methods": [ "GET" ],
+      "endpoint": "v2/healthcheck"
+    },
+    {
+      "methods": [ "GET" ],
       "endpoint": "v2/pools"
     },
     {
