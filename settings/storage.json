@@ -3,7 +3,7 @@
     "endpoints": [
     {
       "methods": [ "GET" ],
-      "endpoint": "v2/healthcheck"
+      "endpoint": "v2/up"
     },
     {
       "methods": [ "GET" ],
