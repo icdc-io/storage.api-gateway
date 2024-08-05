@@ -3,10 +3,6 @@
     "endpoints": [
     {
       "methods": [ "GET" ],
-      "endpoint": "v2/up"
-    },
-    {
-      "methods": [ "GET" ],
       "endpoint": "/up"
     },
     {
