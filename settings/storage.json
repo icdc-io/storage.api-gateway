@@ -7,6 +7,10 @@
     },
     {
       "methods": [ "GET" ],
+      "endpoint": "/up"
+    },
+    {
+      "methods": [ "GET" ],
       "endpoint": "v2/pools"
     },
     {
