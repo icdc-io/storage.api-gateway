@@ -2,8 +2,16 @@
   "backend": "http://setup:8080",
   "endpoints": [
   {
+    "methods": [ "GET" ],
+    "endpoint": "v1/accounts"
+  },
+  {
     "methods": [ "POST", "DELETE" ],
     "endpoint": "v1/accounts/{accountName}"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "v1/flows/{flowId}"
   }
   ]
 }
