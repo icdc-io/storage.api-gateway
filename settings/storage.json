@@ -39,11 +39,21 @@
     },
     {
       "methods": [ "PUT" ],
-      "endpoint": "v2/accounts/{account}/s3/quotas/{quota_id}"
+      "endpoint": "v2/accounts/{account}/s3/quotas/{quota_id}",
+      "comment": "@DS: remove when fixed frontend, as we renamed to /s3/quotas/:id"
     },
     {
       "methods": [ "PUT" ],
-      "endpoint": "v2/accounts/{account}/iscsi/quotas/{quota_id}"
+      "endpoint": "v2/accounts/{account}/iscsi/quotas/{quota_id}",
+      "comment": "@DS: remove when fixed frontend, as we renamed to /iscsi/quotas/:id"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/s3/quotas/{quota_id}"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/quotas/{quota_id}"
     },
     {
       "methods": [ "GET", "POST" ],
