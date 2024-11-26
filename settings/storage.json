@@ -128,7 +128,7 @@
       "endpoint": "v2/gateways/{gateway_id}"
     },
     {
-      "methods": ["GET", "POST"],
+      "methods": ["PUT", "DELETE"],
       "endpoint": "v2/iscsi/disks/{disk_id}"
     },
     {
