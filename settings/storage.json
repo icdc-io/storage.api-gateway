@@ -35,17 +35,7 @@
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/s3/quotas"
-    },
-    {
-      "methods": [ "PUT" ],
-      "endpoint": "v2/accounts/{account}/s3/quotas/{quota_id}",
-      "comment": "@DS: remove when fixed frontend, as we renamed to /s3/quotas/:id"
-    },
-    {
-      "methods": [ "PUT" ],
-      "endpoint": "v2/accounts/{account}/iscsi/quotas/{quota_id}",
-      "comment": "@DS: remove when fixed frontend, as we renamed to /iscsi/quotas/:id"
+      "endpoint": "v2/s3/quotas"
     },
     {
       "methods": [ "PUT", "DELETE" ],
@@ -56,8 +46,12 @@
       "endpoint": "v2/iscsi/quotas/{quota_id}"
     },
     {
+      "methods": [ "GET" ],
+      "endpoint": "v2/s3/limits"
+    },
+    {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/s3/users"
+      "endpoint": "v2/s3/users"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -77,19 +71,15 @@
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/s3/users/{id}/buckets"
+      "endpoint": "v2/s3/buckets"
     },
     {
-      "methods": [ "GET", "PUT", "DELETE" ],
-      "endpoint": "v2/s3/buckets"
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/s3/buckets/{path}"
     },
     {
       "methods": [ "POST" ],
       "endpoint": "v2/s3/users/{id}/keys"
-    },
-    {
-      "methods": [ "PUT" ],
-      "endpoint": "v2/s3/users/{id}/lock"
     },
     {
       "methods": [ "GET", "POST" ],
