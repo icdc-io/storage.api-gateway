@@ -31,7 +31,7 @@
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/iscsi/quotas"
+      "endpoint": "v2/iscsi/quotas"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -55,11 +55,11 @@
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/iscsi/configs"
+      "endpoint": "v2/iscsi/configs"
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/iscsi/clients"
+      "endpoint": "v2/iscsi/clients"
     },
     {
       "methods": [ "GET" ],
