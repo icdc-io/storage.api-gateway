@@ -47,6 +47,10 @@
     },
     {
       "methods": [ "GET" ],
+      "endpoint": "v2/iscsi/limits"
+    },
+    {
+      "methods": [ "GET" ],
       "endpoint": "v2/s3/limits"
     },
     {
