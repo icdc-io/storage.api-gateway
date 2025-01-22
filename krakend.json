@@ -1,15 +1,30 @@
 {
-   "version": 2,
+   "version": 3,
    "port": 8080,
    "extra_config":{
-      "github_com/devopsfaith/krakend-gologging":{
+      "telemetry/logging": {
          "level": "DEBUG",
          "prefix": "[KRAKEND]",
          "syslog": false,
          "stdout": true,
          "format": "default"
       },
-      "github_com/devopsfaith/krakend-cors":{
+      "telemetry/opentelemetry": {
+         "service_name": {{ env "OTEL_SERVICE_NAME" | default ("apigw") | quote }},
+         "trace_sample_rate": {{ env "OTEL_SAMPLE_RATE" | default (0.25) }},
+         "exporters": {
+            "otlp": [
+               {
+                  "name": {{ env "SERVICE_NAME" | default ("apigw") | quote }},
+                  "host": {{ env "OTEL_EXPORTER_OTLP_URL" |  default ("collector.tracing.internal") | quote }},
+                  "port": {{ env "OTEL_EXPORTER_OTLP_PORT" | default (443) }},
+                  "use_http": {{ env "OTEL_USE_HTTP" | default (true) }},
+                  "disable_metrics": {{ env "OTEL_DISABLE_METRICS" | default (true) }}
+               }
+            ]
+         }
+      },
+      "security/cors": {
          "allow_origins":[
             "http*"
          ],

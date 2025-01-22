@@ -1,14 +1,15 @@
 
-                    "github.com/devopsfaith/krakend/http": {
-                        "return_error_details": "storage_api_service"
+                    "backend/http": {
+                        "return_error_details": "storage_service"
                     },
-                    "github.com/devopsfaith/krakend-martian": {
+                    "modifier/martian": {
                         "header.Blacklist": {
-                        "names": [
-                            "Access-Control-Allow-Origin"
-                        ],
-                        "scope": [
-                            "response"
-                        ]
+                            "names": [
+                                "Access-Control-Allow-Origin"
+                            ],
+                            "scope": [
+                                "response",
+                                "request"
+                            ]
                         }
                     }
