@@ -75,11 +75,11 @@
     },
     {
       "methods": [ "PUT", "DELETE" ],
-      "endpoint": "v2/s3/buckets/{account_name}/{bucket_name}"
+      "endpoint": "v2/s3/buckets/{name}/{bucket}"
     },
     {
       "methods": [ "PUT", "DELETE" ],
-      "endpoint": "v2/s3/buckets/{bucket_name}"
+      "endpoint": "v2/s3/buckets/{name}"
     },
     {
       "methods": [ "POST" ],
