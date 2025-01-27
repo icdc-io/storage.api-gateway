@@ -4,10 +4,17 @@
          "endpoint":"/api/storage/{{ $ep.endpoint }}",
          "output_encoding":"no-op",
          "method":"{{ $method }}",
-         "headers_to_pass":[
-            "*"
+         "input_headers": [
+            "X-Auth-User",
+            "X-Auth-User-Fullname",
+            "X-Auth-Group",
+            "X-Auth-Account",
+            "X-Auth-Project",
+            "X-Auth-Role",
+            "Content-Type",
+            "Authorization"
          ],
-         "querystring_params":[
+         "input_query_strings":[
              "*"
          ],
          "backend":[
@@ -18,9 +25,35 @@
 	          {{ env "BACKEND_STORAGE" | default (expandenv $.storage.backend) | quote }}
                ],
                "extra_config":{ {{ include "storage_extra.json" }}
-	       }
+	            }
             }
-         ]
+         ],
+         "extra_config":{
+            "auth/validator": {
+               "alg": "RS256",
+               "audience": [
+                  {{ env "SSO_CLIENT_ID" | default "cloud-ui" | quote }}
+               ],
+               "jwk_url": {{ printf "%s/realms/%s/protocol/openid-connect/certs" (env "SSO_URL") (env "SSO_REALM") | quote }},
+               "propagate_claims": [
+                  ["user_id", "x-auth-user"],
+                  ["name", "x-auth-user-fullname"],
+                  ["groups", "jwt-groups"],
+                  ["external.accounts", "jwt-accounts"]
+              ],
+              "operation_debug": true,
+              "cache": true
+            },
+            "modifier/lua-endpoint":{
+               "sources":[
+                  "/etc/krakend/lua/json.lua",
+                  "/etc/krakend/lua/auth.lua"
+               ],
+               "pre": "authValidate('{{ env "LOCATION_NAME" | default "dcz"}}')",
+               "live": true,
+               "allow_open_libs": true
+            }
+         }
       }
 {{   end }}
 {{ end }}

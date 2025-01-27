@@ -1,0 +1,21 @@
+# Docker-compose is for local development of krakend rules
+# Run tools/dump_server.py to troubleshooting the rules
+version: '3'
+services:
+  krakend:
+    image: devopsfaith/krakend
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/etc/krakend
+    environment:
+      - LOCATION_NAME=dcz
+      - SSO_URL=https://login.lab.icdc.io
+      - SSO_REALM=devel
+      - BACKEND_STORAGE=http://host.containers.internal:8000
+      - FC_ENABLE=1
+      - FC_SETTINGS=settings
+      - FC_PARTIALS=partials
+      - FC_TEMPLATES=templates
+    #  - FC_OUT=/dev/stdout # test config
+    command: run -c /etc/krakend/krakend.json

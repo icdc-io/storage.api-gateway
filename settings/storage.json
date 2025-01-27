@@ -3,39 +3,71 @@
     "endpoints": [
     {
       "methods": [ "GET" ],
+      "endpoint": "/up"
+    },
+    {
+      "methods": [ "GET" ],
       "endpoint": "v2/pools"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts/{account}"
     },
     {
       "methods": [ "POST" ],
       "endpoint": "v2/accounts"
     },
     {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/iscsi/quotas"
-    },
-    {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/s3/quotas"
-    },
-    {
       "methods": [ "PUT" ],
-      "endpoint": "v2/accounts/{account}/s3/quotas/{quota_id}"
+      "endpoint": "v2/accounts"
     },
     {
-      "methods": [ "PUT" ],
-      "endpoint": "v2/accounts/{account}/iscsi/quotas/{quota_id}"
-    },
-    {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/s3/users"
+      "methods": [ "DELETE" ],
+      "endpoint": "v2/accounts/{account}"
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/iscsi/configs"
+      "endpoint": "v2/iscsi/quotas"
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/accounts/{account}/iscsi/clients"
+      "endpoint": "v2/s3/quotas"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/s3/quotas/{quota_id}"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/quotas/{quota_id}"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/iscsi/limits"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/s3/limits"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/s3/users"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/configs"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/clients"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/accounts/{account}/usage"
     },
     {
       "methods": [ "GET" ],
@@ -47,19 +79,19 @@
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/s3/users/{id}/buckets"
+      "endpoint": "v2/s3/buckets"
     },
     {
-      "methods": [ "GET", "PUT", "DELETE" ],
-      "endpoint": "v2/s3/buckets"
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/s3/buckets/{name}/{bucket}"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/s3/buckets/{name}"
     },
     {
       "methods": [ "POST" ],
       "endpoint": "v2/s3/users/{id}/keys"
-    },
-    {
-      "methods": [ "PUT" ],
-      "endpoint": "v2/s3/users/{id}/lock"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -96,6 +128,10 @@
     {
       "methods": [ "GET"],
       "endpoint": "v2/gateways/{gateway_id}"
+    },
+    {
+      "methods": ["PUT", "DELETE"],
+      "endpoint": "v2/iscsi/disks/{disk_id}"
     },
     {
       "methods": [ "GET", "POST" ],
