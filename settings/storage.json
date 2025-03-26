@@ -22,11 +22,7 @@
       "endpoint": "v2/accounts"
     },
     {
-      "methods": [ "PUT" ],
-      "endpoint": "v2/accounts"
-    },
-    {
-      "methods": [ "DELETE" ],
+      "methods": [ "DELETE", "PUT"],
       "endpoint": "v2/accounts/{account}"
     },
     {
