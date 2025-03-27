@@ -4,24 +4,74 @@
          "endpoint":"/api/delivery/{{ $ep.endpoint }}",
          "output_encoding":"no-op",
          "method":"{{ $method }}",
-         "headers_to_pass":[
+         "input_headers": [
+            "X-Auth-User",
+            "X-Auth-User-Fullname",
+            "X-Auth-Group",
+            "X-Auth-Account",
+            "X-Auth-Project",
+            "X-Auth-Role",
+            "X-Icdc-Account",
+            "X-Icdc-Role",
+            "Content-Type"
+         ],
+         "input_query_strings": [
             "*"
          ],
-         "querystring_params":[
-             "*"
-         ],
-         "backend":[
-            {
-               "url_pattern":"/api/{{ $ep.endpoint }}",
-               "encoding":"no-op",
-               "host":[
+      "backend": [
+        {
+          "url_pattern": "/api/{{ $ep.endpoint }}",
+          "encoding": "no-op",
+          "host": [
 	          {{ env "BACKEND_DELIVERY" | default (expandenv $.delivery.backend) | quote }}
-               ],
-               "extra_config":{ {{ include "delivery_extra.json" }}
-               }
+          ],
+          "extra_config": {
+            "backend/http": {
+              "return_error_details": "delivery_service"
+            },
+            "modifier/martian": {
+              "header.Blacklist": {
+                "names": [
+                  "Access-Control-Allow-Origin",
+                  "X-Icdc-Account",
+                  "X-Icdc-Role"
+                ],
+                "scope": [
+                  "response",
+                  "request"
+                ]
+              }
             }
-         ]
+    	    }
+        }
+      ],
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "audience": [
+            {{ env "SSO_CLIENT_ID" | default "cloud-ui" | quote }}
+          ],
+          "jwk_url": {{ printf "%s/realms/%s/protocol/openid-connect/certs" (env "SSO_URL") (env "SSO_REALM") | quote }},
+          "propagate_claims": [
+            ["user_id", "x-auth-user"],
+            ["name", "x-auth-user-fullname"],
+            ["groups", "jwt-groups"],
+            ["external.accounts", "jwt-accounts"]
+          ],
+          "operation_debug": true,
+          "cache": true
+        },
+        "modifier/lua-endpoint": {
+          "sources": [
+            "/etc/krakend/lua/json.lua",
+            "/etc/krakend/lua/auth.lua"
+          ],
+          "pre": "authValidate('{{ env "LOCATION_NAME" | default "dcz"}}')",
+          "live": true,
+          "allow_open_libs": true
+        }
       }
-{{   end }}
-{{ end }}
+    }
 
+{{ end }}
+{{ end }}
