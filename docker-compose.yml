@@ -8,14 +8,22 @@ services:
       - 8080:8080
     volumes:
       - .:/etc/krakend
+    #  - "./platform-ca.crt:/usr/local/share/ca-certificates/platform-ca.crt"
     environment:
       - LOCATION_NAME=dcz
       - SSO_URL=https://login.lab.icdc.io
       - SSO_REALM=devel
       - BACKEND_STORAGE=http://host.containers.internal:8000
+      - OTEL_EXPORTER_OTLP_URL=collector.telemetry.internal
+      - OTEL_EXPORTER_OTLP_PORT=4318
+      - OTEL_USE_HTTP=true
+      - OTEL_DISABLE_METRICS=true
       - FC_ENABLE=1
       - FC_SETTINGS=settings
       - FC_PARTIALS=partials
       - FC_TEMPLATES=templates
     #  - FC_OUT=/dev/stdout # test config
+    #extra_hosts:
+    # - collector.telemetry.internal:10.253.27.150
+    #command: sh -c 'update-ca-certificates; krakend run -c /etc/krakend/krakend.json'
     command: run -c /etc/krakend/krakend.json
