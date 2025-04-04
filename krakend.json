@@ -10,16 +10,16 @@
          "format": "default"
       },
       "telemetry/opentelemetry": {
-         "service_name": {{ env "OTEL_SERVICE_NAME" | default ("apigw") | quote }},
-         "trace_sample_rate": {{ env "OTEL_SAMPLE_RATE" | default (0.25) }},
+         "service_name": "storage.apigw",
+         "trace_sample_rate": {{ env "OTEL_SAMPLE_RATE" | default (1) }},
          "exporters": {
             "otlp": [
                {
-                  "name": {{ env "SERVICE_NAME" | default ("apigw") | quote }},
-                  "host": {{ env "OTEL_EXPORTER_OTLP_URL" |  default ("collector.tracing.internal") | quote }},
-                  "port": {{ env "OTEL_EXPORTER_OTLP_PORT" | default (443) }},
-                  "use_http": {{ env "OTEL_USE_HTTP" | default (true) }},
-                  "disable_metrics": {{ env "OTEL_DISABLE_METRICS" | default (true) }}
+                  "name": "telemetry.collector",
+                  "host": {{ env "OTEL_EXPORTER_OTLP_URL" | default ("collector.telemetry.internal") | quote }},
+                  "port": {{ env "OTEL_EXPORTER_OTLP_PORT" | default (4317) }},
+                  "use_http": {{ env "OTEL_USE_HTTP" | default (false) }},
+                  "disable_metrics": {{ env "OTEL_DISABLE_METRICS" | default (false) }}
                }
             ]
          }
