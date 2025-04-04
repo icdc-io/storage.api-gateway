@@ -17,9 +17,9 @@
                {
                   "name": "telemetry.collector",
                   "host": {{ env "OTEL_EXPORTER_OTLP_URL" | default ("collector.telemetry.internal") | quote }},
-                  "port": {{ env "OTEL_EXPORTER_OTLP_PORT" | default (4317) }},
-                  "use_http": {{ env "OTEL_USE_HTTP" | default (false) }},
-                  "disable_metrics": {{ env "OTEL_DISABLE_METRICS" | default (false) }}
+                  "port": {{ env "OTEL_EXPORTER_OTLP_PORT" | default ("4318") | int64 }},
+                  "use_http": {{ env "OTEL_USE_HTTP" | default ("true") | eq "true" }},
+                  "disable_metrics": {{ env "OTEL_DISABLE_METRICS" | default ("false") | eq "true" }}
                }
             ]
          }
