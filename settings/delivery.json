@@ -28,6 +28,10 @@
   {
     "methods": [ "GET" ],
     "endpoint": "v1/services/status"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "v1/services/apps"
   }
   ]
 }
