@@ -11,7 +11,7 @@
       },
       "telemetry/opentelemetry": {
          "service_name": "storage.apigw",
-         "trace_sample_rate": {{ env "OTEL_SAMPLE_RATE" | default (1) }},
+         "trace_sample_rate": {{ env "OTEL_SAMPLE_RATE" | default (1) | float64 }},
          "exporters": {
             "otlp": [
                {
