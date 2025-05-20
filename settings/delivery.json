@@ -32,6 +32,10 @@
   {
     "methods": [ "GET" ],
     "endpoint": "v1/services/apps"
+  },
+  {
+    "methods": [ "GET" ],
+    "endpoint": "v1/services"
   }
   ]
 }
