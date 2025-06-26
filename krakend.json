@@ -22,7 +22,17 @@
                   "disable_metrics": {{ env "OTEL_DISABLE_METRICS" | default ("false") | eq "true" }}
                }
             ]
-         }
+         },
+	 "layers": {
+	    "backend": {
+	       "traces": {
+	          "report_headers": true
+	       }
+	    },
+	    "global": {
+	      "report_headers": true
+	    }
+	 }
       },
       "security/cors": {
          "allow_origins":[
