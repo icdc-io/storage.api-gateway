@@ -86,10 +86,6 @@
       "endpoint": "v2/s3/users/{id}/keys"
     },
     {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/gateways/{gateway_id}/iscsi/configs"
-    },
-    {
       "methods": [ "GET", "DELETE" ],
       "endpoint": "v2/iscsi/configs/{config_id}"
     },
@@ -115,11 +111,7 @@
     },
     {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/configs/{config_id}/gateways"
-    },
-    {
-      "methods": [ "GET"],
-      "endpoint": "v2/gateways/{gateway_id}"
+      "endpoint": "v2/iscsi/configs/{config_id}/gateways"
     },
     {
       "methods": ["PUT", "DELETE"],
