@@ -6,20 +6,16 @@
       "endpoint": "v2/pools"
     },
     {
-      "methods": [ "GET" ],
+      "methods": [ "GET", "POST" ],
       "endpoint": "v2/accounts"
     },
     {
+      "methods": [ "GET", "PUT", "DELETE" ],
+      "endpoint": "v2/accounts/{account}"
+    },
+    {
       "methods": [ "GET" ],
-      "endpoint": "v2/accounts/{account}"
-    },
-    {
-      "methods": [ "POST" ],
-      "endpoint": "v2/accounts"
-    },
-    {
-      "methods": [ "DELETE", "PUT"],
-      "endpoint": "v2/accounts/{account}"
+      "endpoint": "v2/accounts/{account}/usage"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -56,10 +52,6 @@
     {
       "methods": [ "GET", "POST" ],
       "endpoint": "v2/iscsi/clients"
-    },
-    {
-      "methods": [ "GET" ],
-      "endpoint": "v2/accounts/{account}/usage"
     },
     {
       "methods": [ "GET", "PUT", "DELETE" ],
@@ -128,14 +120,6 @@
     {
       "methods": [ "POST" ],
       "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}/rollback"
-    },
-    {
-      "methods": [ "GET" ],
-      "endpoint": "v2/accounts/iscsi/snapshots"
-    },
-    {
-      "methods":["GET"],
-      "endpoint" : "v2/"
     }
     ]
 }
