@@ -18,8 +18,20 @@
       "endpoint": "v2/accounts/{account}/usage"
     },
     {
+      "methods": [ "GET" ],
+      "endpoint": "v2/iscsi/limits"
+    },
+    {
+      "methods": [ "GET" ],
+      "endpoint": "v2/s3/limits"
+    },
+    {
       "methods": [ "GET", "POST" ],
       "endpoint": "v2/iscsi/quotas"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/quotas/{quota_id}"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -30,32 +42,16 @@
       "endpoint": "v2/s3/quotas/{quota_id}"
     },
     {
-      "methods": [ "PUT", "DELETE" ],
-      "endpoint": "v2/iscsi/quotas/{quota_id}"
-    },
-    {
-      "methods": [ "GET" ],
-      "endpoint": "v2/iscsi/limits"
-    },
-    {
-      "methods": [ "GET" ],
-      "endpoint": "v2/s3/limits"
-    },
-    {
       "methods": [ "GET", "POST" ],
       "endpoint": "v2/s3/users"
     },
     {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/iscsi/configs"
-    },
-    {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/iscsi/clients"
-    },
-    {
       "methods": [ "GET", "PUT", "DELETE" ],
       "endpoint": "v2/s3/users/{id}"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/s3/users/{id}/keys"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -66,28 +62,60 @@
       "endpoint": "v2/s3/buckets/{name}/{bucket}"
     },
     {
-      "methods": [ "PUT", "DELETE" ],
-      "endpoint": "v2/s3/buckets/{name}"
-    },
-    {
-      "methods": [ "POST" ],
-      "endpoint": "v2/s3/users/{id}/keys"
-    },
-    {
-      "methods": [ "GET", "DELETE" ],
-      "endpoint": "v2/iscsi/configs/{config_id}"
-    },
-    {
       "methods": [ "GET", "POST" ],
-      "endpoint": "v2/iscsi/configs/{config_id}/disks"
-    },
-    {
-      "methods": [ "PUT", "DELETE" ],
-      "endpoint": "v2/iscsi/configs/{config_id}/disks/{id}"
+      "endpoint": "v2/iscsi/clients"
     },
     {
       "methods": [ "PUT", "DELETE" ],
       "endpoint": "v2/iscsi/clients/{client_id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/clusters"
+    },
+    {
+      "methods": [ "GET", "DELETE" ],
+      "endpoint": "v2/iscsi/clusters/{cluster_id}"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/iscsi/gateways"
+    },
+    {
+      "methods": [ "DELETE" ],
+      "endpoint": "v2/iscsi/gateways/{gateway_id}"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/iscsi/targets"
+    },
+    {
+      "methods": [ "DELETE" ],
+      "endpoint": "v2/iscsi/targets/{target_id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/disks"
+    },
+    {
+      "methods": [ "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/disks/{id}"
+    },
+    {
+      "methods": [ "GET", "POST" ],
+      "endpoint": "v2/iscsi/snapshots"
+    },
+    {
+      "methods": [ "GET", "PUT", "DELETE" ],
+      "endpoint": "v2/iscsi/snapshots/{snapshot_id}"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/iscsi/snapshots/{snapshot_name}/new_disk"
+    },
+    {
+      "methods": [ "POST" ],
+      "endpoint": "v2/iscsi/snapshots/{snapshot_name}/rollback"
     },
     {
       "methods": [ "GET", "POST" ],
@@ -96,30 +124,6 @@
     {
       "methods": [ "DELETE" ],
       "endpoint": "v2/iscsi/clients/{client_id}/disks/{id}"
-    },
-    {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/iscsi/configs/{config_id}/gateways"
-    },
-    {
-      "methods": ["PUT", "DELETE"],
-      "endpoint": "v2/iscsi/disks/{disk_id}"
-    },
-    {
-      "methods": [ "GET", "POST" ],
-      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots"
-    },
-    {
-      "methods": [ "GET", "PUT", "DELETE" ],
-      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}"
-    },
-    {
-      "methods": [ "POST" ],
-      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}/new_disk"
-    },
-    {
-      "methods": [ "POST" ],
-      "endpoint": "v2/iscsi/disks/{disk_id}/snapshots/{snapshot_name}/rollback"
     }
     ]
 }
